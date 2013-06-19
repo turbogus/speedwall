@@ -52,6 +52,7 @@ for z=1,table.getn(couleurs) do
 		groups = {crumbly=2,cracky=3},
 		--sounds = default.node_sound_sand_defaults(),
 	})
+	minetest.register_alias("simplewall:"..couleurs[z], "speedwall:sandstone"..couleurs[z])
 	
 	--speedwall_sandstone_brick :
 	minetest.register_craft({
@@ -69,3 +70,5 @@ for z=1,table.getn(couleurs) do
 		--sounds = default.node_sound_sand_defaults(),
 	})
 end
+
+minetest.register_alias("simplewall:bitume", "speedwall:sandstoneblack")
