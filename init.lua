@@ -34,7 +34,7 @@ for z=1,table.getn(couleurs) do
 		tiles = {"speedwall_sand_"..couleurs[z]..".png"}, 
 		is_ground_content = true,
 		groups = {crumbly=3, falling_node=1, sand=1},
-		--sounds = default.node_sound_sand_defaults(),
+		sounds = default.node_sound_sand_defaults(),
 	})
 
 	--speedwall_sandstone :
@@ -50,7 +50,7 @@ for z=1,table.getn(couleurs) do
 		tiles = {"speedwall_sandstone_"..couleurs[z]..".png"}, 
 		is_ground_content = true,
 		groups = {crumbly=2,cracky=3},
-		--sounds = default.node_sound_sand_defaults(),
+		sounds = default.node_sound_stone_defaults(),
 	})
 	minetest.register_alias("simplewall:"..couleurs[z], "speedwall:sandstone"..couleurs[z])
 	
@@ -67,7 +67,7 @@ for z=1,table.getn(couleurs) do
 		tiles = {"speedwall_sandstone_brick_"..couleurs[z]..".png"}, 
 		is_ground_content = true,
 		groups = {cracky=2},
-		--sounds = default.node_sound_sand_defaults(),
+		sounds = default.node_sound_stone_defaults(),
 	})
 end
 
