@@ -25,8 +25,7 @@ function CreationDeBlock(couleur, TypeDeBlock, Couper)
 	
 	-- Ajoute du groups auquelle il appartien si ce n est pas deja fait
 	if not( BlockDeBase["groups"][TypeDeBlock]== 1) then
-		local groups = BlockDeBase["groups"]
-		groups[TypeDeBlock] = 1
+		BlockDeBase["groups"][TypeDeBlock] = 1
 	 end
 	
 	BlockDeBase = CopieTable(BlockDeBase)
@@ -46,9 +45,8 @@ function CreationDeBlock(couleur, TypeDeBlock, Couper)
 	minetest.register_node("speedwall:"..TypeDeBlock..couleur, BlockDeBase)
 
 	--Retiré le groups	
-		BlockDeBase = CopieTable(BlockDeBase)
-		local groups = BlockDeBase["groups"]
-		groups[TypeDeBlock] = nil
+	BlockDeBase = CopieTable(BlockDeBase)
+	BlockDeBase["groups"][TypeDeBlock] = nil
 
 	--Création moreblocks
 	if minetest.global_exists("moreblocks") and Couper then	
@@ -59,11 +57,9 @@ end
 
 
 for z=1,table.getn(couleurs) do
-	
 	CreationDeBlock(couleurs[z],"sand",false)
 	CreationDeBlock(couleurs[z],"sandstone",true)
-	CreationDeBlock(couleurs[z],"sandstonebrick",true)
-	
+	CreationDeBlock(couleurs[z],"sandstonebrick",true)	
 end
 
 minetest.register_alias("simplewall:bitume", "speedwall:sandstoneblack")
